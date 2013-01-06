@@ -21,7 +21,11 @@ namespace UmbracoMVCDemo.BackEnd.Trees
             Javascript.Append(
             @"function openDemoController() {
                 UmbClientMgr.contentFrame('/Demo/DemoAdminSurface');
-            }");
+            }
+            function openDemoController2(id) {
+                UmbClientMgr.contentFrame('/Demo/DemoAdminSurface/Edit/id');
+            }
+            ");
         }
 
         public override void Render(ref XmlTree tree)
@@ -42,7 +46,7 @@ namespace UmbracoMVCDemo.BackEnd.Trees
             XmlTreeNode xNode2 = XmlTreeNode.Create(this);
             xNode2.NodeID = "2";
             xNode2.Text = "Demo node 2";
-            xNode2.Action = "";
+            xNode2.Action = "javascript:openDemoController2("+1+");";
             xNode2.Icon = "folder.gif";
             xNode2.OpenIcon = "folder_o.gif";
             OnBeforeNodeRender(ref tree, ref xNode2, EventArgs.Empty);

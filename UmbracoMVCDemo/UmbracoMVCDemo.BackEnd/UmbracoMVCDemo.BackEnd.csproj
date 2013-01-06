@@ -202,6 +202,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DemoObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Trees\DemoTree.cs" />
   </ItemGroup>
@@ -321,10 +322,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\DemoAdminSurface\Index.cshtml" />
+    <Content Include="Views\DemoAdminSurface\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

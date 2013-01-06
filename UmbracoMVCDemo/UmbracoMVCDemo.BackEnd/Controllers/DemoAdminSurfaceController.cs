@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
+using UmbracoMVCDemo.BackEnd.Models;
 
 namespace UmbracoMVCDemo.BackEnd.Controllers
 {
@@ -25,6 +26,22 @@ namespace UmbracoMVCDemo.BackEnd.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Edit()
+        {
+            var demoObject = new DemoObject() {Id = 1, Description = "This is a demo object"};
+            return View(demoObject);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(DemoObject demoObject)
+        {
+            if (demoObject != null && demoObject.Id == 1)
+            {
+                return RedirectToAction("Index");
+            }
+            return View("Error");
         }
 
     }
