@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
+using UmbracoMVCDemo.BackEnd.Helpers;
 using UmbracoMVCDemo.BackEnd.Models;
 
 namespace UmbracoMVCDemo.BackEnd.Controllers
 {
     [PluginController("Demo")]
+    [UmbracoAuthorize]
     public class DemoAdminSurfaceController : SurfaceController 
     {
 
